@@ -25,10 +25,10 @@ fastify.get('/', async (request, reply) => {
 
 
 const start = async () => {
-  let port= process.env.port ||3000;
+  let port= process.env.port ||8080;
   try {
     await fastify.listen(port);
-    console.log('Server running on port 3000');
+    console.log('Server running on port ',port);
   } catch (err) {
     console.error('Error starting server:', err);
     process.exit(1);
