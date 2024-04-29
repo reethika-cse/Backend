@@ -26,8 +26,8 @@ fastify.get('/', async (request, reply) => {
 
 const start = async () => {
   try {
-    await fastify.listen(5000);
-    console.log('Server running on port 5000');
+    await fastify.listen(3000);
+    console.log('Server running on port 3000');
   } catch (err) {
     console.error('Error starting server:', err);
     process.exit(1);
