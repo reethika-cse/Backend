@@ -27,7 +27,7 @@ fastify.get('/', async (request, reply) => {
 const start = async () => {
   let port= process.env.port ||8080;
   try {
-    await fastify.listen(port);
+    await fastify.listen({port:port});
     console.log('Server running on port ',port);
   } catch (err) {
     console.error('Error starting server:', err);
