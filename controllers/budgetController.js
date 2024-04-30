@@ -6,9 +6,7 @@ const moment = require("moment");
 
 const createBudget = async (req, res) => {
   try {
-    console.log(req.body);
-    console.log(req.user);
-    console.log(req.body.categories);
+
 
     let {
       name,
@@ -39,7 +37,7 @@ const createBudget = async (req, res) => {
     });
     await Promise.all(allpromises);
     await newBudget.save();
-    res.status(200).send({ message: "Budget created successfully" });
+    res.status(200).send({ message: "Budget created successfully", budgetData: newBudget  });
   } catch (err) {
     res.status(500).send({ message: err.message });
   }
